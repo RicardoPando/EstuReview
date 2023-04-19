@@ -1,6 +1,6 @@
 module.exports = function () {
   var data = {
-    usuario: [
+    users: [
       {
         id:1,
         nameUser: "Luis Pérez Reyes",
