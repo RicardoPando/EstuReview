@@ -22,6 +22,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { UserComponent } from './components/user/user.component';
 import { UserListarComponent } from './components/user/user-listar/user-listar.component';
 import { CreateEditComponent } from './components/user/create-edit/create-edit.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { Navbar2Component } from './components/navbar/navbar2/navbar2.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +36,10 @@ import { CreateEditComponent } from './components/user/create-edit/create-edit.c
     RegistroColegioComponent,
     UserComponent,
     UserListarComponent,
-    CreateEditComponent
+    CreateEditComponent,
+    NavbarComponent,
+    Navbar2Component,
+    NosotrosComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +55,10 @@ import { CreateEditComponent } from './components/user/create-edit/create-edit.c
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatMenuModule
+    MatMenuModule, 
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
