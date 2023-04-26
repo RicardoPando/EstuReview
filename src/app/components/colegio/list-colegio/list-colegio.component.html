@@ -1,0 +1,82 @@
+<div class="container">
+    <h1 style="text-align: center;">Listado de Colegios</h1>
+  
+    <div style="text-align: right;">
+      <button mat-raised-button color="primary"
+              routerLink="/colegios/nuevo">Nuevo</button>
+    </div>
+    <mat-form-field>
+      <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
+    </mat-form-field>
+  
+    <div class="example-container mat-elevation-z8">
+      <mat-table #table [dataSource]="dataSource" matSort>
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            Id.
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+        </ng-container>
+  
+        <!-- Name Column -->
+        <ng-container matColumnDef="nameBook">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            nameBook
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{ element.nameBook }}
+          </mat-cell>
+        </ng-container>
+  
+        <!-- Weight Column -->
+        <ng-container matColumnDef="nHojas">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            nHojas
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{ element.nHojas }}
+          </mat-cell>
+        </ng-container>
+  
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="publicationDateAuthor">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>
+            publicationDateAuthor
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{element.publicationDateAuthor | date:'dd/MM/yyyy'}}
+          </mat-cell>
+        </ng-container>
+  
+          <!-- Weight Column -->
+          <ng-container matColumnDef="author">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+                author
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              {{ element.author}}
+            </mat-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="accion01">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="warn"
+                [routerLink]="['/colegios/edicion',element.id]">Actualizar</button>
+            </td>
+          </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      </mat-table>
+  
+      <mat-paginator
+        #paginator
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 20]"
+        [showFirstLastButtons]="true"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+  
