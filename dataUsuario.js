@@ -48,32 +48,18 @@ module.exports = function () {
     ageUser: 27
 }
     ],
-    colegios:[
+    Colegios:[
       {
         id: 1,
-        nameBook: "Las leyes",
-	      nHojas: "145",
-        publicationDateAuthor: "2022-09-09",
-        author:
-        {
-          id:1,
-          nameAuthor: "Luis Pérez Reyes",
-          birthDateAuthor: "2000-09-10",
-          emailAuthor:"lperez@gmail.com",
-        }
+        name: "Pitágoras",
+	      district: "Los olivos",
+        pension:144,
       },
       {
         id: 2,
-        nameBook: "Programacion",
-	      nHojas: "255",
-        publicationDateAuthor: "2020-01-10",
-        author:
-        {
-          id:1,
-          nameAuthor: "Jorge Cueva Gutierres",
-          birthDateAuthor: "1990-09-10",
-          emailAuthor:"JCueva@gmail.com",
-        }
+        name: "Pamer",
+	      district: "SJL",
+        pension:243,
       }
     ]
   }

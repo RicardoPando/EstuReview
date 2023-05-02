@@ -1,6 +1,6 @@
 <div class="container">
     <h1 style="text-align: center;">Listado de Colegios</h1>
-  
+
     <div style="text-align: right;">
       <button mat-raised-button color="primary"
               routerLink="/colegios/nuevo">Nuevo</button>
@@ -8,7 +8,7 @@
     <mat-form-field>
       <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
     </mat-form-field>
-  
+
     <div class="example-container mat-elevation-z8">
       <mat-table #table [dataSource]="dataSource" matSort>
         <!-- Position Column -->
@@ -18,47 +18,39 @@
           </mat-header-cell>
           <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
         </ng-container>
-  
+
         <!-- Name Column -->
-        <ng-container matColumnDef="nameBook">
+        <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
-            nameBook
+            Nombre colegio
           </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            {{ element.nameBook }}
+            {{ element.name }}
           </mat-cell>
         </ng-container>
-  
+
         <!-- Weight Column -->
-        <ng-container matColumnDef="nHojas">
+        <ng-container matColumnDef="district">
           <mat-header-cell *matHeaderCellDef mat-sort-header>
-            nHojas
+            Distrito
           </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            {{ element.nHojas }}
+            {{ element.district }}
           </mat-cell>
         </ng-container>
-  
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="publicationDateAuthor">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>
-            publicationDateAuthor
-          </mat-header-cell>
-          <mat-cell *matCellDef="let element">
-            {{element.publicationDateAuthor | date:'dd/MM/yyyy'}}
-          </mat-cell>
-        </ng-container>
-  
+
+
+
           <!-- Weight Column -->
-          <ng-container matColumnDef="author">
+          <ng-container matColumnDef="pension">
             <mat-header-cell *matHeaderCellDef mat-sort-header>
-                author
+                Pensión
             </mat-header-cell>
             <mat-cell *matCellDef="let element">
-              {{ element.author}}
+              {{ element.pension}}
             </mat-cell>
           </ng-container>
-  
+
           <ng-container matColumnDef="accion01">
             <th mat-header-cell *matHeaderCellDef> Acciones </th>
             <td mat-cell *matCellDef="let element">
@@ -69,7 +61,7 @@
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
       </mat-table>
-  
+
       <mat-paginator
         #paginator
         [pageSize]="10"
@@ -79,4 +71,3 @@
       </mat-paginator>
     </div>
   </div>
-  

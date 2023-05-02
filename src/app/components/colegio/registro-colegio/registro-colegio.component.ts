@@ -35,10 +35,10 @@ export class RegistroColegioComponent {
 
     this.form = new FormGroup({
       id: new FormControl(),
-      nameBook: new FormControl(),
-      nHojas: new FormControl(),
-      publicationDateAuthor: new FormControl(),
-      author: new FormControl(),
+      name: new FormControl(),
+      district: new FormControl(),
+      pension: new FormControl(),
+
     });
   }
   init() {
@@ -46,10 +46,9 @@ export class RegistroColegioComponent {
       this.colegioService.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           id: new FormControl(data.id),
-          nameBook: new FormControl(data.nameBook),
-          nHojas: new FormControl(data.nHojas),
-          publicationDateAuthor: new FormControl(data.publicationDateAuthor),
-          author: new FormControl(data.author),
+          name: new FormControl(data.name),
+          district: new FormControl(data.district),
+          pension: new FormControl(data.pension),
         });
       });
     }
@@ -57,13 +56,12 @@ export class RegistroColegioComponent {
 
   aceptar(): void {
     this.colegio.id = this.form.value['id'];
-    this.colegio.nameBook = this.form.value['nameBook'];
-    this.colegio.nHojas = this.form.value['nHojas'];
-    this.colegio.publicationDateAuthor = this.form.value['publicationDateAuthor'];
-    this.colegio.author = this.form.value['author'];
+    this.colegio.name = this.form.value['name'];
+    this.colegio.district = this.form.value['district'];
+    this.colegio.pension = this.form.value['pension'];
     if (
-      this.form.value['nameBook'].length > 0 &&
-      this.form.value['nHojas'].length > 0
+      this.form.value['name'].length > 0 &&
+      this.form.value['district'].length > 0
     ) {
       if (this.edicion) {
         //registrarlo en la base de  datos

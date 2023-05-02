@@ -21,8 +21,10 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "adapter": "^1.0.0-beta.10",
+    "json": "^11.0.0",
     "moment": "^2.29.4",
     "rxjs": "~7.8.0",
+    "server": "^1.0.38",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

@@ -12,7 +12,7 @@ import { ColegioService } from 'src/app/services/colegio.service';
 })
 export class ListColegioComponent {
   lista: Colegio[] = [];
-  displayedColumns = ['id','nameBook','nHojas','publicationDateAuthor','author'];
+  displayedColumns = ['id','name','district','pension'];
   dataSource = new MatTableDataSource<Colegio>();
   @ViewChild(MatPaginator) paginator : MatPaginator;
   @ViewChild(MatSort) sort : MatSort;
